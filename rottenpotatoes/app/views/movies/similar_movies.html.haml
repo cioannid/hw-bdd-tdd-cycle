@@ -1,0 +1,5 @@
+%h2 Movies of #{@similar_movies[0].director}
+
+%ul#details
+  - @similar_movies.each do |movie|
+    %li= movie.title
