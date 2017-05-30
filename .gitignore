@@ -1,3 +1,3 @@
-rottenpotatoes/coverage/
-rottenpotatoes/tmp/cache/assets/sprockets/
-rottenpotatoes/log/
+coverage
+tmp/cache/assets/sprockets/
+log/
