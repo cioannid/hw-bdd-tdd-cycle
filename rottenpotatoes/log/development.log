@@ -1143,3 +1143,65 @@ Processing by MoviesController#show as HTML
   [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 4]]
   Rendered movies/show.html.haml within layouts/application (1.1ms)
 Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 79.129.177.251 at 2017-05-30 16:37:27 +0000
+
+
+Started GET "/movies" for 79.129.177.251 at 2017-05-30 16:37:28 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (32.0ms)
+Completed 200 OK in 335ms (Views: 296.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/movies/2" for 79.129.177.251 at 2017-05-30 16:37:32 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered movies/show.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 26ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/search_by_director/2" for 79.129.177.251 at 2017-05-30 16:37:35 +0000
+Processing by MoviesController#similar_movies as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to https://saas-mooc-cioannid.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 79.129.177.251 at 2017-05-30 16:37:36 +0000
+
+
+Started GET "/movies" for 79.129.177.251 at 2017-05-30 16:37:36 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/10" for 79.129.177.251 at 2017-05-30 16:37:42 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered movies/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/search_by_director/10" for 79.129.177.251 at 2017-05-30 16:37:48 +0000
+Processing by MoviesController#similar_movies as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 10]]
+Redirected to https://saas-mooc-cioannid.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 79.129.177.251 at 2017-05-30 16:37:48 +0000
+
+
+Started GET "/movies" for 79.129.177.251 at 2017-05-30 16:37:48 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (11.1ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.3ms)

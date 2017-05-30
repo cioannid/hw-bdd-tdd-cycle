@@ -24,4 +24,15 @@ describe MoviesController do
       expect(assigns(:similar_movies)).to eq fake_results
     end
   end
+  
+  describe 'looking for movies with same director but no director information exists' do
+    before :each do
+      @m = Movie.create()
+    end
+    
+    it 'should select the Home page for rendering' do
+      get :similar_movies, {:id=>@m.id}
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end
