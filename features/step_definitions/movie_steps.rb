@@ -5,5 +5,11 @@ Given(/^the following movies exist:$/) do |movies_table|
 end
 
 Then(/^the director of "(.*?)" should be "(.*?)"$/) do |arg1, arg2|
-  expect(Movie.find_by_title(arg1).director).to eq(arg2)
+  # movie_path(Movie.find_by_title($1))
+  if page.respond_to? :should
+    page.should have_content(arg2)
+  else
+    assert page.has_content?(arg2)
+  end
+  # expect(Movie.find_by_title(arg1).director).to eq(arg2)
 end
